@@ -13,5 +13,4 @@ class PasswordHelper:
         return base64.b64encode(os.urandom(20)).decode('utf-8')
 
     def validate_password(self, plain, salt, expected):
-        print(self.get_hash(plain + salt), expected)
         return self.get_hash(plain + salt) == expected
